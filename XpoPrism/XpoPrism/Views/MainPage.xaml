@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+	xmlns:local="clr-namespace:XpoPrism.Views;assembly=XpoPrism" xmlns:dxg="clr-namespace:DevExpress.XamarinForms.DataGrid;assembly=DevExpress.XamarinForms.Grid"
+    x:Class="XpoPrism.Views.MainPage"
+    Title="Main">
+
+
+
+	  <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Data}" 
+                 SortMode="Multiple">
+            <dxg:DataGridView.Columns>
+                <dxg:TextColumn FieldName="Name"
+                        SortOrder="Descending" SortIndex="0"/>
+                <!-- ... -->
+                <dxg:NumberColumn FieldName="Phone" 
+                          SortOrder="Ascending" SortIndex="1"/>
+                <!-- ... -->
+                <dxg:CheckBoxColumn FieldName="Shipped" AllowSort="False"/>
+            </dxg:DataGridView.Columns>
+        </dxg:DataGridView>
+    </StackLayout>
+    
+
+</ContentPage>
+
