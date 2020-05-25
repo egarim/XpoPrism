@@ -70,7 +70,7 @@ namespace XpoPrism
 
         private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

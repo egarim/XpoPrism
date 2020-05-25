@@ -72,6 +72,7 @@ namespace XpoPrism.ViewModels
 
             base.OnNavigatedTo(parameters);
             this.UoW = XpoHelper.CreateUnitOfWork();
+            this.Data = new ObservableCollection<dynamic>();
             this.LoadData();
         }
     }

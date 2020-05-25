@@ -8,22 +8,27 @@
     x:Class="XpoPrism.Views.MainPage"
     Title="Main">
 
-
-
-	  <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Data}" 
+    <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Data}" 
                  SortMode="Multiple">
-            <dxg:DataGridView.Columns>
-                <dxg:TextColumn FieldName="Name"
+        <dxg:DataGridView.Columns>
+            <dxg:TextColumn FieldName="Name"
                         SortOrder="Descending" SortIndex="0"/>
-                <!-- ... -->
-                <dxg:NumberColumn FieldName="Phone" 
+            <!-- ... -->
+            <dxg:NumberColumn FieldName="Phone" 
                           SortOrder="Ascending" SortIndex="1"/>
-                <!-- ... -->
-                <dxg:CheckBoxColumn FieldName="Shipped" AllowSort="False"/>
-            </dxg:DataGridView.Columns>
-        </dxg:DataGridView>
-    </StackLayout>
+            <!-- ... -->
+            <dxg:CheckBoxColumn FieldName="Shipped" AllowSort="False"/>
+        </dxg:DataGridView.Columns>
+    </dxg:DataGridView>
+
+
+
+    <!--<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="CLIENTES" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="Title" />
+        <SearchBar x:Name="SearchBar" Text="{Binding SearchText}" Placeholder="Search..." SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}" />
+        <Button Text="Nuevo" Command="{Binding NewObjectCommand}" BackgroundColor="#D07405" BorderColor ="Black" BorderWidth="1" FontAttributes="Bold" TextColor="#FFFFFF"></Button>
+       
+    </StackLayout>-->
     
 
 </ContentPage>
