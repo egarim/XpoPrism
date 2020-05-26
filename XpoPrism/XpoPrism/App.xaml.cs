@@ -7,6 +7,7 @@ using XpoPrism.ViewModels;
 using System;
 using System.IO;
 using DevExpress.Xpo.DB;
+using Orm;
 using DevExpress.Xpo;
 using DevExpress.Data.Linq.Helpers;
 using BIT.Xpo.XPOWebApi.Client;

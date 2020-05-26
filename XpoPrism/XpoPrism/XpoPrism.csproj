@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Orm\Orm.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\ContactList.xaml.cs">
       <DependentUpon>ContactList.xaml</DependentUpon>
     </Compile>

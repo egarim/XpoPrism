@@ -1,6 +1,7 @@
 using System;
 using System.Collections.ObjectModel;
 using DevExpress.Xpo;
+using Orm;
 using Prism;
 using Prism.Commands;
 using Prism.Mvvm;
