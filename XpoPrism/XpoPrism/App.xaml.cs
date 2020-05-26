@@ -10,7 +10,7 @@ using DevExpress.Xpo.DB;
 using Orm;
 using DevExpress.Xpo;
 using DevExpress.Data.Linq.Helpers;
-using BIT.Xpo.XPOWebApi.Client;
+using BIT.Xpo.Providers.WebApi.Client;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XpoPrism
@@ -60,7 +60,7 @@ namespace XpoPrism
 
 
 
-            using(var UoW=XpoHelper.CreateUnitOfWork())
+            using(var UoW= XpoHelper.CreateUnitOfWork())
             {
                 if(UoW.Query<Contact>().Count()==0)
                 {
