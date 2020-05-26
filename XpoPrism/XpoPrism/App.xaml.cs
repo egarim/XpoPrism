@@ -65,7 +65,7 @@ namespace XpoPrism
                     UoW.CommitChanges();
             }
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/ContactList");
         }
 
         private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -76,8 +76,8 @@ namespace XpoPrism
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            //containerRegistry.RegisterInstance(typeof(XpoHelper), XpoHelper);
+            containerRegistry.RegisterForNavigation<ContactList, ContactListViewModel>();
+            containerRegistry.RegisterForNavigation<ContactPage, ContactPageViewModel>();
         }
     }
 }

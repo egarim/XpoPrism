@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+	xmlns:local="clr-namespace:XpoPrism.Views;assembly=XpoPrism" xmlns:dxg="clr-namespace:DevExpress.XamarinForms.DataGrid;assembly=DevExpress.XamarinForms.Grid"
+    x:Class="XpoPrism.Views.ContactList"
+    Title="Main">
+
+   
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="Contacts" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="Title" />
+        <SearchBar x:Name="SearchBar" Text="{Binding SearchText}" Placeholder="Search..." SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}" />
+        <Button Text="Add New Contact" Command="{Binding AddNewContactCommand}" />
+        <!--<Button Text="Nuevo" Command="{Binding NewObjectCommand}" BackgroundColor="#D07405" BorderColor ="Black" BorderWidth="1" FontAttributes="Bold" TextColor="#FFFFFF"></Button>-->
+        <dxg:DataGridView x:Name="grid" ItemsSource="{Binding Data}" Tap="Grid_Tap" SortMode="Multiple">
+            <dxg:DataGridView.Columns>
+                <dxg:TextColumn FieldName="Name"
+                        SortOrder="Descending" SortIndex="0"/>
+                <!-- ... -->
+                <dxg:NumberColumn FieldName="Phone" 
+                          SortOrder="Ascending" SortIndex="1"/>
+                <!-- ... -->
+            </dxg:DataGridView.Columns>
+        </dxg:DataGridView>
+    </StackLayout>
+    
+
+</ContentPage>
+

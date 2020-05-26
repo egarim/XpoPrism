@@ -3,7 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
-
+using DevExpress.Logify.Xamarin;
 namespace XpoPrism.Droid
 {
     [Activity(Label = "XpoPrism", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -11,6 +11,13 @@ namespace XpoPrism.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+
+          
+
+            LogifyAlert client = LogifyAlert.Instance;
+            client.ApiKey = "71BE7BFE7AA24210AF74932C76B65C9A";
+            client.StartExceptionsHandling();
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
