@@ -9,6 +9,7 @@ using System.IO;
 using DevExpress.Xpo.DB;
 using DevExpress.Xpo;
 using DevExpress.Data.Linq.Helpers;
+using BIT.Xpo.XPOWebApi.Client;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XpoPrism
@@ -47,8 +48,15 @@ namespace XpoPrism
             //string connectionString = InMemoryDataStore.GetConnectionString(filePath);
 
 
+            //DevExpress.Xpo.SimpleDataLayer.SuppressReentrancyAndThreadSafetyCheck = true;
+            
+            XPOWebApi.Register();
+
+            connectionString = XPOWebApi.GetConnectionString("http://192.168.122.101/BitServer", string.Empty, "db1");
+
 
             XpoHelper.InitXpo(connectionString);
+
 
 
             using(var UoW=XpoHelper.CreateUnitOfWork())

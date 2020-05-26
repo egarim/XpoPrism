@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpoPrism.iOS", "XpoPrism\Xp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpoPrism.UWP", "XpoPrism\XpoPrism.UWP\XpoPrism.UWP.csproj", "{B4BC0B2B-735F-4DB3-9AE0-577A596026BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainServer", "MainServer\MainServer.csproj", "{833BAD1B-2745-4353-A3F0-B154B68E0ABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIT.Server", "MainServer\BIT.Server.csproj", "{833BAD1B-2745-4353-A3F0-B154B68E0ABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

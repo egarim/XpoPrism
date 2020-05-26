@@ -3,7 +3,7 @@
     "windowsAuthentication": true,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://localhost/MainServer",
+      "applicationUrl": "http://localhost/BitServer",
       "sslPort": 0
     },
     "iisExpress": {
