@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Versioning;
@@ -13,16 +14,27 @@ namespace MainServer.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        // GET api/values
+        public string GetWelcomeMessage()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = assembly.FullName.Split(",")[0] + ".WelcomeMessage.txt";
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+        
         Stats stats;
         string osPlatform;
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
             string framework = "";
             try
             {
-              
+
                 framework = Assembly
                     .GetEntryAssembly()?
                     .GetCustomAttribute<TargetFrameworkAttribute>()?
@@ -39,7 +51,9 @@ namespace MainServer.Controllers
 
                 throw;
             }
-            return new string[] { "Hello", "XPO", "Rest" ,$"Framework:{framework} platform:{osPlatform}" };
+            return GetWelcomeMessage()+ $"{System.Environment.NewLine}Framework:{framework} platform:{osPlatform}";
+            //return new string[] {$"{GetWelcomeMessage()}", $"{System.Environment.NewLine}",
+            //    "Hello", "XPO", "Rest" ,$"Framework:{framework} platform:{osPlatform}" };
         }
 
         // GET api/values/5
